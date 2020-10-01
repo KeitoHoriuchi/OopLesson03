@@ -1,0 +1,7 @@
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\bin\Debug\Chapter4.exe.config
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\bin\Debug\Chapter4.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\bin\Debug\Chapter4.pdb
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\obj\Debug\Chapter4.csprojAssemblyReference.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\obj\Debug\Chapter4.csproj.CoreCompileInputs.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\obj\Debug\Chapter4.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter4\obj\Debug\Chapter4.pdb
