@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chapter3
+namespace Chapter4
 {
     //演習4
     //4.1.1

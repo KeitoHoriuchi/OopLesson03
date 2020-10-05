@@ -1,0 +1,7 @@
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\bin\Debug\Capter05.exe.config
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\bin\Debug\Capter05.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\bin\Debug\Capter05.pdb
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\obj\Debug\Capter05.csprojAssemblyReference.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\obj\Debug\Capter05.csproj.CoreCompileInputs.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\obj\Debug\Capter05.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Capter05\obj\Debug\Capter05.pdb
