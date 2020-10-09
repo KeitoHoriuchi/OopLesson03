@@ -11,47 +11,62 @@ namespace Chapter6
     {
         static void Main(string[] args)
         {
-            //整数の例
-            var numbers = new List<int> { 19, 17, 15, 24, 12, 225, 14, 20, 12, 28, 19, 30, 24 };
+            //問題6.1
+            var numbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
 
-            //var strings = numbers.Select(n => n.ToString("0000")).ToArray();
-            //foreach(var st in strings) {
-            //    Console.WriteLine(st + " ");
-            //}
-
-            numbers.Select(n => n.ToString("0000")).Distinct().ToList().ForEach(s => Console.Write(s + " "));
+            //6.1.1 最大値を求める
+            Exercise1_1(numbers);
+            
+            //6.1.2 最後から要素を2つ取り出す
+            Exercise1_2(numbers);
+            
+            //6.1.3 数値型→文字列型
+            Exercise1_3(numbers);
             Console.WriteLine();
 
-            //並べ替え
-            var soteN = numbers.OrderBy(n => n);
-            foreach (var nums in soteN)
-            {
-                Console.WriteLine(nums + " ");
-            }
-
-            //文字列の例
-            var words = new List<string> { "Microsoft", "Apple", "Google", "Oracle", "Facebook" };
-
-            var lower = words.Select(name => name.ToLower()).ToArray();
-
-            //オブジェクトの例
-            var books = Books.GetBooks();
-            //タイトルのみのリスト
-            var titles = books.Select(name => name.Title);
-            foreach (var title in titles)
-            {
-                Console.WriteLine(title + " ");
-            }
-
+            //6.1.4 昇順から要素を3つ取り出す
+            Exercise1_4(numbers);
             Console.WriteLine();
 
-            //ページ、又は金額の多い順に並べ替え
-            var soteB = books.OrderByDescending(book => book.Pages).Take(3);
-            foreach (var book in soteB)
-            {
-                Console.WriteLine(book.Title +" "+ book.Pages);
+            //6.1.5 重複なく10より大きい値をカウント
+            Exercise1_5(numbers);
 
+            //問題6.2
+            //6.2.1
+            
+        }
+
+        private static void Exercise1_1(int[] numbers){
+            Console.WriteLine("・6.1.1");
+            Console.WriteLine(numbers.Max());
+        }
+
+        private static void Exercise1_2(int[] numbers){
+            Console.WriteLine("・6.1.2");
+            int pos = numbers.Length - 2;
+            foreach (var number in numbers.Skip(pos)){
+                Console.WriteLine(number + " ");
             }
+        }
+
+        private static void Exercise1_3(int[] numbers){
+            Console.WriteLine("・6.1.3");
+            foreach (int n in numbers)
+            {
+                Console.Write(n.ToString() + " ");
+            }
+        }
+
+        private static void Exercise1_4(int[] numbers){
+            Console.WriteLine("・6.1.4");
+            foreach (var number in numbers.OrderBy(n => n).Take(3)){
+                Console.Write(number + " ");
+            }
+        }
+
+        private static void Exercise1_5(int[] numbers){
+            Console.WriteLine("・6.1.5");
+            Console.WriteLine(numbers.Distinct().Count(n => n > 10));
         }
     }
 }
