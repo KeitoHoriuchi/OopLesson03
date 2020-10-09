@@ -7,66 +7,77 @@ using System.Threading.Tasks;
 
 namespace Chapter6
 {
-    class Program
+    class Book
     {
-        static void Main(string[] args)
+        public string Title { get; set; }
+        public int Price { get; set; }
+        public int Pages { get; set; }
+    }
+    static class Books
+    {
+        public static List<Book> GetBooks()
         {
-            //問題6.1
-            var numbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
-
-            //6.1.1 最大値を求める
-            Exercise1_1(numbers);
-            
-            //6.1.2 最後から要素を2つ取り出す
-            Exercise1_2(numbers);
-            
-            //6.1.3 数値型→文字列型
-            Exercise1_3(numbers);
-            Console.WriteLine();
-
-            //6.1.4 昇順から要素を3つ取り出す
-            Exercise1_4(numbers);
-            Console.WriteLine();
-
-            //6.1.5 重複なく10より大きい値をカウント
-            Exercise1_5(numbers);
-
-            //問題6.2
-            //6.2.1
-            
+            var books = new List<Book> {
+               new Book { Title = "こころ", Price = 400, Pages = 378 },
+               new Book { Title = "人間失格", Price = 281, Pages = 212 },
+               new Book { Title = "伊豆の踊子", Price = 389, Pages = 201 },
+               new Book { Title = "若草物語", Price = 637, Pages = 464 },
+               new Book { Title = "銀河鉄道の夜", Price = 411, Pages = 276 },
+               new Book { Title = "二都物語", Price = 961, Pages = 666 },
+               new Book { Title = "遠野物語", Price = 514, Pages = 268 },
+            };
+            return books;
         }
 
-        private static void Exercise1_1(int[] numbers){
-            Console.WriteLine("・6.1.1");
-            Console.WriteLine(numbers.Max());
-        }
-
-        private static void Exercise1_2(int[] numbers){
-            Console.WriteLine("・6.1.2");
-            int pos = numbers.Length - 2;
-            foreach (var number in numbers.Skip(pos)){
-                Console.WriteLine(number + " ");
-            }
-        }
-
-        private static void Exercise1_3(int[] numbers){
-            Console.WriteLine("・6.1.3");
-            foreach (int n in numbers)
+        class Program
+        {
+            static void Main(string[] args)
             {
-                Console.Write(n.ToString() + " ");
+
             }
         }
 
-        private static void Exercise1_4(int[] numbers){
-            Console.WriteLine("・6.1.4");
-            foreach (var number in numbers.OrderBy(n => n).Take(3)){
-                Console.Write(number + " ");
+        private static void Exercise2_1(List<Book> books) {
+            Console.WriteLine("・6.2.1");
+            var book = books.FirstOrDefault(b => b.Title == "ワンダフル・C#ライフ");
+            if (book != null) {
+                Console.WriteLine($"{book.Price} {book.Pages}");
             }
         }
 
-        private static void Exercise1_5(int[] numbers){
-            Console.WriteLine("・6.1.5");
-            Console.WriteLine(numbers.Distinct().Count(n => n > 10));
+        private static void Exercise2_2(List<Book> books) {
+            Console.WriteLine("・6.2.2");
+            int count = books.Count(b => b.Title.Contains("C#"));
+            Console.WriteLine(count);
+        }
+
+        private static void Exercise2_3(List<Book> books) { 
+            Console.WriteLine("・6.2.3");
+            var average = books.Where(b => b.Title.Contains("C#")).Average(b => b.Pages);
+            Console.WriteLine(average);
+        }
+        private static void Exercise2_4(List<Book> books) {
+            Console.WriteLine("・6.2.4");
+            var book = books.FirstOrDefault(b => b.Price < 4000);
+            if(book != null)
+                Console.WriteLine(book);
+        }
+        private static void Exercise2_5(List<Book> books) {
+            Console.WriteLine("・6.2.5");
+            var pages = books.Where(b => b.Price < 4000).Max(b => b.Price);
+            Console.WriteLine(pages);
+        }
+        private static void Exercise2_6(List<Book> books) {
+            var selected = books.Where(b => b.Pages >= 400).OrderByDescending(b => b.Price);
+            foreach(var book in selected){
+                Console.WriteLine("{0} {1}", book.Title, book.Price);
+            }
+        }
+        private static void Exercise2_7(List<Book> books){
+            var selected = books.Where(b => b.Title.Contains("C#") && b.Pages <= 500);
+            foreach(var book in books) {
+                Console.WriteLine(book.Title);
+            }
         }
     }
 }
