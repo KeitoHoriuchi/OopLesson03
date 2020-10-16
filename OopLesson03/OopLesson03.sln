@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter5", "Capter05\Chapte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter6", "Chapter6\Chapter6.csproj", "{6D8BF580-5A7E-4AC3-B073-26AAC5338195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter07", "Chapter07\Chapter07.csproj", "{99D80E63-469E-41BA-97EB-9ECB31A723C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter7", "Chapter07\Chapter7.csproj", "{99D80E63-469E-41BA-97EB-9ECB31A723C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

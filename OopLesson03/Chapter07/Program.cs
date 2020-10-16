@@ -6,53 +6,29 @@ using System.Threading.Tasks;
 
 namespace Chapter07{
     class Program {
-        static void Main(string[] args)
-        {
-            //起動時に表示
-            star();
-            Console.WriteLine("* 辞書登録プログラム *");
-            star();
+        static void Main(string[] args) {
+            //演習問題7.1
+            var text = "Cozy lummox gives smart squid who asks for job pen";
+            Exercise1_1(text);  //7.1.1
+        }        
 
-            //単語登録用のList
-            var dic = new Dictionary<string, List<string>>();
-            do
-            {
-                Console.WriteLine("1.登録　2.内容を表示　3.終了");
-                int order = int.Parse(Console.ReadLine());
+        static void Exercise1_1(string text) {
+            var dict = new Dictionary<char, int>();
+            foreach(var ch in text){
+                char uch = char.ToUpper(ch);    //大文字への変換
 
-                if (order == 1) {
-                    //1.単語登録
-                    Console.Write("KEYを入力：");
-                    var key = Console.ReadLine();
-                    Console.Write("VALUEを入力：");
-                    var value = Console.ReadLine();
-                    if (dic.ContainsKey(key)) {
-                        dic[key].Add(value);
+                //dictのAからZの範囲にuchが登録されているかどうか
+                if('A' <= uch && uch <= 'Z'){
+                    if (dict.ContainsKey(uch)){
+                        dict[uch]++;    //登録済みだった場合はカウント
                     } else {
-                        dic[key] = new List<string> { value };
-                    }
-                    Console.WriteLine("登録しました！");
-                }                
-                else if (order == 2) {
-                    //2.内容を表示
-                    Console.WriteLine("KEY：VALUE");
-                    foreach (var item in dic) {
-                        foreach (var words in item.Value)
-                        {
-                            Console.WriteLine("{0}：{1}", item.Key, words);
-                        }
+                        dict[uch] = 1;  //未登録だった場合は新しくキーを登録
                     }
                 }
-                else if (order == 3)
-                    break;
-            } while (true);
-        }      
-      
-        private static void star()
-        {
-            for (int i = 0; i <= 21; i++)
-                Console.Write('*');
-            Console.WriteLine();
+            }
+            foreach (var word in dict){
+                Console.WriteLine("{0}：{1}",word.Key,word.Value);
+            }
         }
     }
 }
