@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Chapter07
 {
-    class Abbreviations : IEnumerable<KeyValuePair<string,string>>;
+    class Abbreviations
     {
        
         private Dictionary<string, string> _dict = new Dictionary<string, string>();
