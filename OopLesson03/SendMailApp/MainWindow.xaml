@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SendMailApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="470" Width="650">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="20,5,20,5" TextWrapping="Wrap" Text="件名：" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="500"/>
+
+        <TextBlock Grid.Row="1" FontSize="20" HorizontalAlignment="Center" Margin="20,5,20,5" TextWrapping="Wrap" Text="To：" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="500"/>
+
+        <TextBlock Grid.Row="2" FontSize="20" HorizontalAlignment="Center" Margin="20,5,20,5" TextWrapping="Wrap" Text="Cc：" VerticalAlignment="Center" RenderTransformOrigin="0.885,-0.332"/>
+        <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="500"/>
+
+        <TextBlock Grid.Row="3" FontSize="20" HorizontalAlignment="Center" Margin="20,5,20,5" TextWrapping="Wrap" Text="Bcc：" VerticalAlignment="Center" RenderTransformOrigin="0.78,-0.071"/>
+        <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="500"/>
+
+        <TextBlock Grid.Row="4" FontSize="20" HorizontalAlignment="Center" Margin="20,5,20,5" TextWrapping="Wrap" Text="本文：" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Height="180" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="500"/>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="59" Margin="342,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="190" Orientation="Horizontal" RenderTransformOrigin="0.499,0.17">
+            <Button FontSize="16" Content="送信" Width="75" Margin="10"/>
+            <Button FontSize="16"  Content="キャンセル" Width="75" Margin="10"/>
+        </StackPanel>
+
+
     </Grid>
 </Window>
