@@ -13,3 +13,5 @@ C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\Send
 C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.csproj.CoreCompileInputs.cache
 C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.exe
 C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.pdb
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\ConfigWindow.g.cs
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\ConfigWindow.baml
