@@ -5,3 +5,10 @@ C:\Users\infosys\Source\Repos\KeitoHoriuchi\OopLesson03\Enshu3\obj\Debug\Enshu3.
 C:\Users\infosys\Source\Repos\KeitoHoriuchi\OopLesson03\Enshu3\obj\Debug\Enshu3.csproj.CoreCompileInputs.cache
 C:\Users\infosys\Source\Repos\KeitoHoriuchi\OopLesson03\Enshu3\obj\Debug\Enshu3.exe
 C:\Users\infosys\Source\Repos\KeitoHoriuchi\OopLesson03\Enshu3\obj\Debug\Enshu3.pdb
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\bin\Debug\Enshu3.exe.config
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\bin\Debug\Enshu3.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\bin\Debug\Enshu3.pdb
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\obj\Debug\Enshu3.csprojAssemblyReference.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\obj\Debug\Enshu3.csproj.CoreCompileInputs.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\obj\Debug\Enshu3.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Enshu3\obj\Debug\Enshu3.pdb
