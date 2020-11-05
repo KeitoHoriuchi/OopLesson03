@@ -1,0 +1,15 @@
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\bin\Debug\SendMailApp.exe.config
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\bin\Debug\SendMailApp.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\bin\Debug\SendMailApp.pdb
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.csprojAssemblyReference.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\MainWindow.g.cs
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\App.g.cs
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp_MarkupCompile.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp_MarkupCompile.lref
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\MainWindow.baml
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.g.resources
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.Properties.Resources.resources
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.csproj.GenerateResource.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.csproj.CoreCompileInputs.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.exe
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\SendMailApp\obj\Debug\SendMailApp.pdb
