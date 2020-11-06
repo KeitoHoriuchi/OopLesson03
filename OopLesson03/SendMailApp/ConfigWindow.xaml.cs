@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,31 @@ namespace SendMailApp
         public ConfigWindow()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        //初期値
+        private void btDefault_Click(object sender, RoutedEventArgs e){
+            Config cf = (Config.GetInstanse()).getDefaultStatus();
+            tbSmtp.Text = cf.Smtp;
+            tbPort.Text = cf.Port.ToString();
+            tbUserName.Text = cf.MailAddress;
+            tbPassWord.Password = cf.PassWord;
+            cbSsl.IsChecked = cf.Ssl;
+        }
+
+        //適用（更新）
+        private void btApply_Click(object sender, RoutedEventArgs e){
+            
+            Config.GetInstanse().UpdateStatus(tbSmtp.Text, tbUserName.Text, tbPassWord.Password,
+                                                int.Parse(tbPort.Text), cbSsl.IsChecked ?? false);//更新処理を呼び出す
+
         }
     }
 }
