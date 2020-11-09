@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SendMailApp"
         mc:Ignorable="d"
-        Title="ConfigWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="メール送信設定" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Background="Aquamarine">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -57,8 +57,6 @@
 
                 <TextBlock Grid.Row="1" Text="送信元：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBox x:Name="tbSender" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                
-                
             </Grid>
         </GroupBox>
         
@@ -73,7 +71,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="btOK" Content="OK" Width="80" Margin="10"/>
+                <Button x:Name="btOK" Content="OK" Width="80" Margin="10" Click="btOK_Click"/>
                 <Button x:Name="btCancel" Content="キャンセル" Width="80" Margin="10" Click="btCancel_Click"/>
                 <Button x:Name="btApply" Content="適用" Width="80" Margin="10" Click="btApply_Click"/>
             </StackPanel>
