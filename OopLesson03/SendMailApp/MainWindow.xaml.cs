@@ -77,12 +77,12 @@ namespace SendMailApp
 
         //ウィンドウのロード時
         private void Window_Loaded(object sender, RoutedEventArgs e){
-            Config.GetInstanse().DeSerialise();
+            Config.GetInstanse().DeSerialise(); //逆シリアル化　XML→オブジェクト
         }
 
         //ウィンドウを閉じる時
         private void Window_Closed(object sender, EventArgs e){
-            Config.GetInstanse().Serialise();
+            Config.GetInstanse().Serialise();   //シリアル化　オブジェクト→XML
         }
     }
 }

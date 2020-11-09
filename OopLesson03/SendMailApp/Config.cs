@@ -4,6 +4,8 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace SendMailApp
 {
@@ -62,8 +64,11 @@ namespace SendMailApp
         }
 
         public void Serialise() //シリアル化
-        {    
-
+        {
+            using (var wirter = XmlWriter.Create("Config.xml")){
+                var serializer = new XmlSerializer();
+                serializer.Serialize(wirter,Config.GetInstanse());
+            }
         }
 
         public void DeSerialise()//逆シリアル化
