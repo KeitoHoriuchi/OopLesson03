@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SendMailApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="433.583" Width="650" Loaded="Window_Loaded">
+        Title="MainWindow" Height="433.583" Width="650" Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid Background="Aquamarine">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

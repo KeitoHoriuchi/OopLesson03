@@ -75,9 +75,14 @@ namespace SendMailApp
             configWindow.Show();
         }
 
-        //ロード時
+        //ウィンドウのロード時
         private void Window_Loaded(object sender, RoutedEventArgs e){
+            Config.GetInstanse().DeSerialise();
+        }
 
+        //ウィンドウを閉じる時
+        private void Window_Closed(object sender, EventArgs e){
+            Config.GetInstanse().Serialise();
         }
     }
 }

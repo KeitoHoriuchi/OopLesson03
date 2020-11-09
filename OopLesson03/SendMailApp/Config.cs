@@ -53,12 +53,22 @@ namespace SendMailApp
         //設定データ更新
         public bool UpdateStatus(string smtp, string mailAddress, string passWord,
                                     int port, bool ssl){
-            this.Smtp = smtp;
-            this.MailAddress = mailAddress;
-            this.PassWord = passWord;
-            this.Port = port;
-            this.Ssl = ssl;
+            Smtp = smtp;
+            MailAddress = mailAddress;
+            PassWord = passWord;
+            Port = port;
+            Ssl = ssl;
             return true;
+        }
+
+        public void Serialise() //シリアル化
+        {    
+
+        }
+
+        public void DeSerialise()//逆シリアル化
+        {  
+
         }
     }
 }
