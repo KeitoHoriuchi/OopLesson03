@@ -51,7 +51,7 @@ namespace SendMailApp{
 
         //キャンセルボタン
         private void btCancel_Click(object sender, RoutedEventArgs e){
-            this.Close();
+            notUpdate();
         }
 
         //ロード時に一度だけ呼び出される
@@ -62,7 +62,25 @@ namespace SendMailApp{
             tbPassWord.Password = Config.GetInstanse().PassWord;
             cbSsl.IsChecked = Config.GetInstanse().Ssl;
             tbSender.Text = Config.GetInstanse().MailAddress;
+        }
 
+        //呼び出したオブジェクトとテキストボックス内の文字列に差異があったかどうか
+        //差異があった場合は更新するかどうかの確認
+        private void notUpdate()
+        {
+            if(
+                tbSmtp.Text != Config.GetInstanse().Smtp ||
+                tbPort.Text != Config.GetInstanse().Port.ToString() ||
+                tbUserName.Text != Config.GetInstanse().MailAddress ||
+                tbPassWord.Password != Config.GetInstanse().PassWord ||
+                cbSsl.IsChecked != Config.GetInstanse().Ssl
+                ){
+                var result = MessageBox.Show("設定が反映されていません。" +
+                    "このまま設定を終了しますか？","注意", MessageBoxButton.OKCancel,MessageBoxImage.Warning);
+                if(result == MessageBoxResult.OK){
+                    this.Close();
+                }
+            }
         }
     }
 }
