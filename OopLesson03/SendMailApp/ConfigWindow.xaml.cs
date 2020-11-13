@@ -34,19 +34,34 @@ namespace SendMailApp{
         }
 
         //適用（更新）
-        private void btApply_Click(object sender, RoutedEventArgs e){
-            Config.GetInstanse().UpdateStatus(tbSmtp.Text,
-                                              tbUserName.Text,
-                                              tbPassWord.Password,
-                                              int.Parse(tbPort.Text),
-                                              cbSsl.IsChecked ?? false);//更新処理を呼び出す
-
+        private void btApply_Click(object sender, RoutedEventArgs e) { 
+            if (
+                tbSmtp.Text == "" ||
+                tbPort.Text == "" ||
+                tbUserName.Text == "" ||
+                tbPassWord.Password == "" ||
+                tbSender.Text == ""
+                )
+            {
+                MessageBox.Show("設定に空欄があります。",
+                                "注意",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
+            }
+            else { 
+                Config.GetInstanse().UpdateStatus(tbSmtp.Text,
+                                                      tbUserName.Text,
+                                                      tbPassWord.Password,
+                                                      int.Parse(tbPort.Text),
+                                                      cbSsl.IsChecked ?? false);//更新処理を呼び出す
+            }
         }
 
         //OKボタン
         private void btOK_Click(object sender, RoutedEventArgs e){
             btApply_Click(sender, e);   //更新処理を呼び出す
-            this.Close();
+            
+            
         }
 
         //キャンセルボタン
@@ -62,6 +77,11 @@ namespace SendMailApp{
             tbPassWord.Password = Config.GetInstanse().PassWord;
             cbSsl.IsChecked = Config.GetInstanse().Ssl;
             tbSender.Text = Config.GetInstanse().MailAddress;
+        }
+
+        //空欄があった場合は保存できないようにする
+        private void textEmpty(){
+            
         }
 
         //呼び出したオブジェクトとテキストボックス内の文字列に差異があったかどうか
