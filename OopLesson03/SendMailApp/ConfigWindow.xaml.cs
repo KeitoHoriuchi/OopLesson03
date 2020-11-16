@@ -104,7 +104,8 @@ namespace SendMailApp{
                 tbPort.Text != Config.GetInstanse().Port.ToString() ||
                 tbUserName.Text != Config.GetInstanse().MailAddress ||
                 tbPassWord.Password != Config.GetInstanse().PassWord ||
-                cbSsl.IsChecked != Config.GetInstanse().Ssl
+                cbSsl.IsChecked != Config.GetInstanse().Ssl ||
+                tbSender.Text != Config.GetInstanse().MailAddress
                 ){
                 var result = MessageBox.Show("設定が反映されていません。" +
                     "このまま設定を終了しますか？","注意", MessageBoxButton.OKCancel,MessageBoxImage.Warning);

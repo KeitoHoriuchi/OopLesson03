@@ -29,7 +29,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="SMTPサーバー：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox x:Name="tbSmtp" Grid.Column="1" Margin="5,20"/>
+                <TextBox x:Name="tbSmtp" Grid.Column="1" Margin="5,20" />
                 <TextBlock Grid.Row="1" Text="ユーザー名：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBox x:Name="tbUserName" Grid.Row="1" Grid.Column="1" Margin="5,20"/>
                 <TextBlock Grid.Column="2" Text="ポート：" HorizontalAlignment="Center" VerticalAlignment="Center"/>

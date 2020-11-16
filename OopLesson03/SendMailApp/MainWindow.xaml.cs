@@ -48,7 +48,11 @@ namespace SendMailApp
 
                 msg.Subject = tbTitle.Text; //件名
                 msg.Body = tbText.Text;     //本文
+
+                if(tbCc.Text != "")
                 msg.CC.Add(tbCc.Text);      //CC
+
+                if(tbBcc.Text != "")
                 msg.Bcc.Add(tbBcc.Text);    //BCC
 
                 sc.Host = "smtp.gmail.com"; //SMTPサーバーの設定
