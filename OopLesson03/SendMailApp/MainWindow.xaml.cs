@@ -52,6 +52,7 @@ namespace SendMailApp
 
                 msg.Subject = tbTitle.Text; //件名
                 msg.Body = tbText.Text;     //本文
+                if(tbfile.Text != "")
                 msg.Attachments.Add(new Attachment(tbfile.Text)); //添付ファイル
 
                 if(tbCc.Text != "")

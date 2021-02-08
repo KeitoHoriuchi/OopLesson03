@@ -87,12 +87,12 @@ namespace SendMailApp{
 
         //ロード時に一度だけ呼び出される
         private void Window_Loaded(object sender, RoutedEventArgs e){
-            //tbSmtp.Text = Config.GetInstanse().Smtp;
-            //tbPort.Text = Config.GetInstanse().Port.ToString();
-            //tbUserName.Text = Config.GetInstanse().MailAddress;
-            //tbPassWord.Password = Config.GetInstanse().PassWord;
-            //cbSsl.IsChecked = Config.GetInstanse().Ssl;
-            //tbSender.Text = Config.GetInstanse().MailAddress;
+            tbSmtp.Text = Config.GetInstanse().Smtp;
+            tbPort.Text = Config.GetInstanse().Port.ToString();
+            tbUserName.Text = Config.GetInstanse().MailAddress;
+            tbPassWord.Password = Config.GetInstanse().PassWord;
+            cbSsl.IsChecked = Config.GetInstanse().Ssl;
+            tbSender.Text = Config.GetInstanse().MailAddress;
         }
 
         //呼び出したオブジェクトとテキストボックス内の文字列に差異があったかどうか
