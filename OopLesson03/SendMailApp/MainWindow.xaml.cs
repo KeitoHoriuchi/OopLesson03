@@ -16,15 +16,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+
 
 namespace SendMailApp
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         SmtpClient sc = new SmtpClient();
+        
 
         public MainWindow()
         {
@@ -35,9 +39,9 @@ namespace SendMailApp
         //送信完了イベント
         private void Sc_SendCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e){
             if(e.Cancelled) {
-                MessageBox.Show("送信はキャンセルされました。");
+                System.Windows.MessageBox.Show("送信はキャンセルされました。");
             } else {
-                MessageBox.Show(e.Error?.Message ?? "送信完了。");
+                System.Windows.MessageBox.Show(e.Error?.Message ?? "送信完了。");
             }
         }
 
@@ -48,6 +52,7 @@ namespace SendMailApp
 
                 msg.Subject = tbTitle.Text; //件名
                 msg.Body = tbText.Text;     //本文
+                msg.Attachments.Add(new Attachment(tbfile.Text)); //添付ファイル
 
                 if(tbCc.Text != "")
                 msg.CC.Add(tbCc.Text);      //CC
@@ -64,7 +69,7 @@ namespace SendMailApp
                 sc.SendMailAsync(msg);
             }
             catch (Exception ex){
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
         }
 
@@ -88,15 +93,7 @@ namespace SendMailApp
 
         //ウィンドウのロード時
         private void Window_Loaded(object sender, RoutedEventArgs e){
-            try{
-                Config.GetInstanse().DeSerialise(); //逆シリアル化　XML→オブジェクト
-            }
-            catch(FileNotFoundException){
-                ConfigWindowShow(); //ファイルが存在しないので設定画面を先に表示
-            }
-            catch(Exception ex){
-                MessageBox.Show(ex.Message);            
-            }
+           
         }
 
         //ウィンドウを閉じる時
@@ -105,8 +102,28 @@ namespace SendMailApp
                 Config.GetInstanse().Serialise();   //シリアル化　オブジェクト→XML
             }
             catch (Exception ex){
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
+        }
+        
+        //添付ファイルの追加
+        private void btAdd_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "ファイルを開く";
+            ofd.InitialDirectory = @"C:\";
+
+            if(ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                tbfile.Text = ofd.FileName;
+            }
+           
+        }
+
+        //添付ファイルの削除
+        private void btdelete_Click(object sender, RoutedEventArgs e)
+        {
+            tbfile.Text = "";
         }
     }
 }

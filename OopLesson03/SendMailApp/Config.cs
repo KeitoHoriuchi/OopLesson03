@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
+
 namespace SendMailApp
 {
     public class Config
@@ -65,17 +66,34 @@ namespace SendMailApp
 
         public void Serialise() //シリアル化
         {
-            using (var wirter = XmlWriter.Create("config.xml")){
-                var serialiser = new XmlSerializer(instanse.GetType());
-                serialiser.Serialize(wirter, instanse);
+            try
+            {
+                using (var wirter = XmlWriter.Create("config.xml"))
+                {
+                    var serialiser = new XmlSerializer(instanse.GetType());
+                    serialiser.Serialize(wirter, instanse);
+                }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         public void DeSerialise()//逆シリアル化
-        {  
-            using(var reader = XmlReader.Create("config.xml")){
-                var serialiser = new XmlSerializer(typeof(Config));
-                instanse = serialiser.Deserialize(reader) as Config;
+        {
+            try
+            {
+                using (var reader = XmlReader.Create("config.xml"))
+                {
+                    var serialiser = new XmlSerializer(typeof(Config));
+                    instanse = serialiser.Deserialize(reader) as Config;
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
     }
