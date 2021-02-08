@@ -94,7 +94,21 @@ namespace SendMailApp
 
         //ウィンドウのロード時
         private void Window_Loaded(object sender, RoutedEventArgs e){
-           
+
+            if (sc.Host == null ||
+               sc.Port == 0 ||
+               sc.Credentials == new NetworkCredential())
+                ConfigWindowShow();
+            
+
+            try
+            {
+                Config.GetInstanse().DeSerialise(); //逆シリアル化 XML→オブジェクト
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
         }
 
         //ウィンドウを閉じる時

@@ -13,17 +13,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SendMailApp{
+namespace SendMailApp
+{
     /// <summary>
     /// ConfigWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class ConfigWindow : Window{
-        public ConfigWindow(){
+    public partial class ConfigWindow : Window
+    {
+        public ConfigWindow()
+        {
             InitializeComponent();
         }
 
         //初期値
-        private void btDefault_Click(object sender, RoutedEventArgs e){
+        private void btDefault_Click(object sender, RoutedEventArgs e)
+        {
             Config cf = (Config.GetInstanse()).getDefaultStatus();
             tbSmtp.Text = cf.Smtp;
             tbPort.Text = cf.Port.ToString();
@@ -34,20 +38,23 @@ namespace SendMailApp{
         }
 
         //適用（更新）
-        private void btApply_Click(object sender, RoutedEventArgs e) { 
+        private void btApply_Click(object sender, RoutedEventArgs e)
+        {
             if (
                 tbSmtp.Text == "" ||
                 tbPort.Text == "" ||
                 tbUserName.Text == "" ||
                 tbPassWord.Password == "" ||
                 tbSender.Text == ""
-                ){
+                )
+            {
                 MessageBox.Show("設定に空欄があります。",
                                 "注意",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Warning);
             }
-            else { 
+            else
+            {
                 Config.GetInstanse().UpdateStatus(tbSmtp.Text,
                                                   tbUserName.Text,
                                                   tbPassWord.Password,
@@ -57,20 +64,23 @@ namespace SendMailApp{
         }
 
         //OKボタン
-        private void btOK_Click(object sender, RoutedEventArgs e){
+        private void btOK_Click(object sender, RoutedEventArgs e)
+        {
             if (
                 tbSmtp.Text == "" ||
                 tbPort.Text == "" ||
                 tbUserName.Text == "" ||
                 tbPassWord.Password == "" ||
                 tbSender.Text == ""
-                ){
+                )
+            {
                 MessageBox.Show("設定に空欄があります。",
                                 "注意",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Warning);
             }
-            else{
+            else
+            {
                 Config.GetInstanse().UpdateStatus(tbSmtp.Text,
                                                   tbUserName.Text,
                                                   tbPassWord.Password,
@@ -81,12 +91,14 @@ namespace SendMailApp{
         }
 
         //キャンセルボタン
-        private void btCancel_Click(object sender, RoutedEventArgs e){
-            this.Close();
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            notUpdate();
         }
 
         //ロード時に一度だけ呼び出される
-        private void Window_Loaded(object sender, RoutedEventArgs e){
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             tbSmtp.Text = Config.GetInstanse().Smtp;
             tbPort.Text = Config.GetInstanse().Port.ToString();
             tbUserName.Text = Config.GetInstanse().MailAddress;
@@ -99,17 +111,19 @@ namespace SendMailApp{
         //差異があった場合は更新するかどうかの確認
         private void notUpdate()
         {
-            if(
+            if (
                 tbSmtp.Text != Config.GetInstanse().Smtp ||
                 tbPort.Text != Config.GetInstanse().Port.ToString() ||
                 tbUserName.Text != Config.GetInstanse().MailAddress ||
                 tbPassWord.Password != Config.GetInstanse().PassWord ||
                 cbSsl.IsChecked != Config.GetInstanse().Ssl ||
                 tbSender.Text != Config.GetInstanse().MailAddress
-                ){
+                )
+            {
                 var result = MessageBox.Show("設定が反映されていません。" +
-                    "このまま設定を終了しますか？","注意", MessageBoxButton.OKCancel,MessageBoxImage.Warning);
-                if(result == MessageBoxResult.OK){
+                    "このまま設定を終了しますか？", "注意", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.OK)
+                {
                     this.Close();
                 }
             }

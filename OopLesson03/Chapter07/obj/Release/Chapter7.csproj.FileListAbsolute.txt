@@ -1,0 +1,2 @@
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter07\obj\Release\Chapter7.csprojAssemblyReference.cache
+C:\Users\infosys\source\repos\OopLesson03\OopLesson03\Chapter07\obj\Release\Chapter7.csproj.CoreCompileInputs.cache

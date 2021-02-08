@@ -16,8 +16,10 @@ namespace SendMailApp
         static Config instanse;
 
         //インスタンスの取得
-        public static Config GetInstanse(){
-            if (instanse == null){
+        public static Config GetInstanse()
+        {
+            if (instanse == null)
+            {
                 instanse = new Config();
             }
             return instanse;
@@ -30,10 +32,11 @@ namespace SendMailApp
         public bool Ssl { get; set; }           //SSL設定
 
         //コンストラクタ(外部からnewできないようにする)
-        private Config(){}
+        private Config() { }
 
         //初期設定用
-        public void DefaultSet(){
+        public void DefaultSet()
+        {
             Smtp = "smtp.gmail.com";
             MailAddress = "ojsinfosys01@gmail.com";
             PassWord = "ojsInfosys2020";
@@ -42,8 +45,10 @@ namespace SendMailApp
         }
 
         //初期値取得用
-        public Config getDefaultStatus(){
-            Config obj = new Config{
+        public Config getDefaultStatus()
+        {
+            Config obj = new Config
+            {
                 Smtp = "smtp.gmail.com",
                 MailAddress = "ojsinfosys01@gmail.com",
                 PassWord = "ojsInfosys2020",
@@ -55,7 +60,8 @@ namespace SendMailApp
 
         //設定データ更新
         public bool UpdateStatus(string smtp, string mailAddress, string passWord,
-                                    int port, bool ssl){
+                                    int port, bool ssl)
+        {
             Smtp = smtp;
             MailAddress = mailAddress;
             PassWord = passWord;
@@ -78,7 +84,6 @@ namespace SendMailApp
             {
 
             }
-            
         }
 
         public void DeSerialise()//逆シリアル化
