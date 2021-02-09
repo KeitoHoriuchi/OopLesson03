@@ -61,10 +61,10 @@ namespace SendMailApp
                 if(tbBcc.Text != "")
                 msg.Bcc.Add(tbBcc.Text);    //BCC
 
-                sc.Host = "smtp.gmail.com"; //SMTPサーバーの設定
-                sc.Port = 587;
-                sc.EnableSsl = true;
-                sc.Credentials = new NetworkCredential("ojsinfosys01@gmail.com", "ojsInfosys2020");
+                sc.Host = Config.GetInstanse().Smtp; //SMTPサーバーの設定
+                sc.Port = Config.GetInstanse().Port;
+                sc.EnableSsl = Config.GetInstanse().Ssl;
+                sc.Credentials = new NetworkCredential(Config.GetInstanse().MailAddress, Config.GetInstanse().PassWord);
 
                 //sc.Send(msg);   //送信
                 sc.SendMailAsync(msg);
